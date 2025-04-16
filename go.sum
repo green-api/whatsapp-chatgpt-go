@@ -1,0 +1,10 @@
+github.com/gabriel-vasile/mimetype v1.4.3 h1:in2uUcidCuFcDKtdcBxlR0rJ1+fsokWf+uqxgUFjbI0=
+github.com/gabriel-vasile/mimetype v1.4.3/go.mod h1:d8uq/6HKRL6CGdk+aubisF/M5GcPfT7nKyLpA0lbSSk=
+github.com/green-api/whatsapp-api-client-golang v0.6.3-0.20240204214127-15a9d34bf546 h1:gTyJYSTENPZGtSGyZYmHVarMC9J4IP4QA+vujbwPi+I=
+github.com/green-api/whatsapp-api-client-golang v0.6.3-0.20240204214127-15a9d34bf546/go.mod h1:PruawIYBXbR1CULTa1n9SBZk5uD+/oUCBAkP5FyHhu4=
+github.com/green-api/whatsapp-chatbot-golang v0.0.5 h1:rli8/FTCMYCRaxCaXpMrQEa+Q9c2CqIxDcLwUF71Xkk=
+github.com/green-api/whatsapp-chatbot-golang v0.0.5/go.mod h1:K3Y/MCzkAvDodxo86FB6brOXR2OxfiJaLDszqxifQlk=
+github.com/sashabaranov/go-openai v1.38.1 h1:TtZabbFQZa1nEni/IhVtDF/WQjVqDgd+cWR5OeddzF8=
+github.com/sashabaranov/go-openai v1.38.1/go.mod h1:lj5b/K+zjTSFxVLijLSTDZuP7adOgerWeFyZLUhAKRg=
+golang.org/x/net v0.20.0 h1:aCL9BSgETF1k+blQaYUBx9hJ9LOGP3gAVemcZlf1Kpo=
+golang.org/x/net v0.20.0/go.mod h1:z8BVo6PvndSri0LbOE3hAn0apkU+1YvI6E70E9jsnvY=
