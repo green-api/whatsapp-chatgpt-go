@@ -89,20 +89,14 @@ func (bot *WhatsappGptBot) handleIncomingMessage(notification *whatsapp_chatbot_
 	response, err := bot.processMessageWithState(ctx, notification, sessionData)
 	if err != nil {
 		log.Printf("Error processing message for chat %s: %v", notification.StateId, err)
-		_, sendErr := bot.Methods().Sending().SendMessage(map[string]interface{}{
-			"chatId":  notification.StateId,
-			"message": bot.errorMessage,
-		})
+		_, sendErr := bot.Sending().SendMessage(notification.StateId, bot.errorMessage)
 		if sendErr != nil {
 			log.Printf("Error sending error message to %s: %v", notification.StateId, sendErr)
 		}
 		return
 	}
 
-	_, sendErr := bot.Methods().Sending().SendMessage(map[string]interface{}{
-		"chatId":  notification.StateId,
-		"message": response,
-	})
+	_, sendErr := bot.Sending().SendMessage(notification.StateId, response)
 	if sendErr != nil {
 		log.Printf("Error sending GPT response to %s: %v", notification.StateId, sendErr)
 	}
@@ -134,10 +128,8 @@ func (bot *WhatsappGptBot) getOrCreateSession(notification *whatsapp_chatbot_gol
 		} else {
 			if oldSessionMap, ok := stateData["gptSession"].(map[string]interface{}); ok {
 				log.Printf("Warning: Found old map-based session for %s. Migrating to JSON format (multi-modal history might be lost for this specific load).", notification.StateId)
-				// Attempt to load from the old map (using a local conversion helper now)
 				migratedSession := mapToGptSessionDataInternal(oldSessionMap, bot.systemMessage)
-				// Immediately save it in the new format
-				bot.updateSessionState(notification, migratedSession) // Save will use JSON
+				bot.updateSessionState(notification, migratedSession)
 				return migratedSession
 			}
 		}
